@@ -64,7 +64,7 @@ EENTITYTYPE Alien::GetType()
 void Alien::ReverseDirectionX()
 {
 	m_fDirX *= -1;
-	m_fY += 10;
+	m_fY += 10.0f;
 }
 
 void Alien::SetVisible(bool p_bValue)

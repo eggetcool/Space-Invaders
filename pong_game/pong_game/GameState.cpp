@@ -244,19 +244,16 @@ bool GameState::Update(float p_fDeltaTime)
 		auto it = m_apxAlien.begin();
 		while (it != m_apxAlien.end())
 		{
-			(*it)->Update(p_fDeltaTime);
-			(*it)->ReverseDirectionX();
 			if ((*it)->IsVisible())
 			{
-				m_xSystem.m_pxDrawManager->Draw(
-					(*it)->GetSprite(),
-					(*it)->GetX(),
-					(*it)->GetY());
+				(*it)->Update(p_fDeltaTime);
+				(*it)->ReverseDirectionX();
 			}
 			it++;
 		}
-		isFalse = true;
 		m_pxAlienRect->ReverseDirection();
+		isFalse = true;
+
 	}
 	isFalse = false;
 	if (m_pxAlienRect->GetX() < 0 && isFalse == false)
